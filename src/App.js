@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-import Team from "./scenes/team";
+import User from "./scenes/user";
+import CreateUser from "./scenes/user/create";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
 import Bar from "./scenes/bar";
@@ -16,10 +17,22 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
 import { getlistExercise } from "./api/ExerciseApi";
+import ViewUser from "./scenes/user/view";
+import Food from "./scenes/food";
+import ViewFood from "./scenes/food/view";
+import Execrise from "./scenes/execrise";
+import ViewExecrise from "./scenes/execrise/view";
+import ChatScreen from "./scenes/chat";
+import CreateMap from "./scenes/map/CreateMap";
+import ListMap from "./scenes/map/ListMap";
+import ViewMap from "./scenes/map/ViewMap";
+import { useGlobalContext } from "./context/GlobalProvider";
 
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
+  const {user} = useGlobalContext();
+  console.log(user);
 
   const [recom, setRecom] = useState([]);
 
@@ -43,8 +56,24 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/contacts" element={<Contacts />} />
+              {/* {User} */}
+              <Route path="/user" element={<User />} />
+              <Route path="/createUser" element={<CreateUser />} />
+              <Route path="/viewUser" element={<ViewUser />} />
+
+              <Route path="/food" element={<Food />} />
+              <Route path="/viewFood" element={<ViewFood />} />
+
+              <Route path="/execrise" element={<Execrise />} />
+              <Route path="/viewExecrise" element={<ViewExecrise />} />
+
+              <Route path="/map" element={<ListMap />} />
+              <Route path="/createMap" element={<CreateMap />} />
+              <Route path="/viewMap" element={<ViewMap />} />
+
+              <Route path="/chat" element={<ChatScreen />} />
+
+              {/* <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} />
@@ -52,7 +81,7 @@ function App() {
               <Route path="/line" element={<Line />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/geography" element={<Geography />} />
+              <Route path="/geography" element={<Geography />} /> */}
             </Routes>
           </main>
         </div>

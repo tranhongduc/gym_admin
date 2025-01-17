@@ -1,9 +1,28 @@
 import axiosInstance from "../axios";
 
-export const getlistExercise = async () => {
+export const getlistExercisetoUser = async () => {
   try {
     const response = await axiosInstance.get("/api/exercises/exercisestoUser/");
     return response.data.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getlistExercise = async () => {
+  try {
+    const response = await axiosInstance.get(`/api/exercises/exercises`);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getExerciseByID = async (id) => {
+  try {
+    const response = await axiosInstance.get(`/api/exercises/exercises1/${id}`);
+    console.log("response", response.data);
+    return response.data.exercise;
   } catch (error) {
     return error;
   }

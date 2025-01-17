@@ -10,13 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const AppRoutes = () => {
   const { isLoggedIn } = useGlobalContext();
-
+  console.log(isLoggedIn);
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route
         path="/app/*"
-        element={isLoggedIn ? <App /> : <Navigate to="/login" />}
+        element={isLoggedIn ? <App /> : <Navigate to="/" />}
       />
     </Routes>
   );

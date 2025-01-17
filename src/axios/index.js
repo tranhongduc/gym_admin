@@ -2,7 +2,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // const endpointURL = 'http://13.208.42.6/';
-const endpointURL = 'http://172.16.3.8:3000';
+const endpointURL = 'http://192.168.250.91:3000';
 
 
 

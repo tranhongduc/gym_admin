@@ -28,9 +28,10 @@ const Login = () => {
         const response = await axiosInstance.post("/api/auth/login", {
           email: username,
           password: password,
+           role: "admin",
         });
         
-        user_login({ email: username, password: password }).then((res) => {
+        user_login({ email: username, password: password , role: "admin", }).then((res) => {
           if (res && res.status === 200) {
             AsyncStorage.setItem("accessToken", res.data.accessToken);
             AsyncStorage.setItem("refreshToken", res.data.refreshToken);
