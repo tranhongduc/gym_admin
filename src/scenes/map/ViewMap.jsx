@@ -31,7 +31,6 @@ const ViewMap = ({ gymData = fakeGymData }) => {
   const mapRef = useRef(null);
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDtQE6rnEqn3l2PulOF7sPyYfh6Rd_XKSY", // Thay bằng API key của bạn
     libraries: ["places"],
   });
 
