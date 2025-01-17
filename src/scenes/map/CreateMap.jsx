@@ -11,7 +11,7 @@ import {
 } from "@react-google-maps/api";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { addGym } from "../../api/GymApi";
-import { Router, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateMap = () => {
   const navigate = useNavigate();
